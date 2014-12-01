@@ -1,0 +1,169 @@
+/Users/jason/.rvm/rubies/ruby-2.1.5/bin/ruby -r ./siteconf20141201-57521-6a6ykq.rb extconf.rb 
+checking for SSL_CTX_new() in -lssl... yes
+checking for BIO_read() in -lcrypto... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling http11_parser.c
+compiling io_buffer.c
+compiling mini_ssl.c
+In file included from mini_ssl.c:3:0:
+/Users/jason/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/ruby/backward/rubyio.h:2:2: warning: #warning use "ruby/io.h" instead of "rubyio.h" [-Wcpp]
+ #warning use "ruby/io.h" instead of "rubyio.h"
+  ^
+mini_ssl.c: In function 'engine_free':
+mini_ssl.c:17:3: warning: 'SSL_free' is deprecated (declared at /usr/include/openssl/ssl.h:1495) [-Wdeprecated-declarations]
+   SSL_free(conn->ssl);
+   ^
+mini_ssl.c:18:3: warning: 'SSL_CTX_free' is deprecated (declared at /usr/include/openssl/ssl.h:1352) [-Wdeprecated-declarations]
+   SSL_CTX_free(conn->ctx);
+   ^
+mini_ssl.c: In function 'engine_alloc':
+mini_ssl.c:28:3: warning: 'BIO_new' is deprecated (declared at /usr/include/openssl/bio.h:591) [-Wdeprecated-declarations]
+   conn->read = BIO_new(BIO_s_mem());
+   ^
+mini_ssl.c:28:3: warning: 'BIO_s_mem' is deprecated (declared at /usr/include/openssl/bio.h:626) [-Wdeprecated-declarations]
+mini_ssl.c:29:3: warning: 'BIO_ctrl' is deprecated (declared at /usr/include/openssl/bio.h:600) [-Wdeprecated-declarations]
+   BIO_set_nbio(conn->read, 1);
+   ^
+mini_ssl.c:31:3: warning: 'BIO_new' is deprecated (declared at /usr/include/openssl/bio.h:591) [-Wdeprecated-declarations]
+   conn->write = BIO_new(BIO_s_mem());
+   ^
+mini_ssl.c:31:3: warning: 'BIO_s_mem' is deprecated (declared at /usr/include/openssl/bio.h:626) [-Wdeprecated-declarations]
+mini_ssl.c:32:3: warning: 'BIO_ctrl' is deprecated (declared at /usr/include/openssl/bio.h:600) [-Wdeprecated-declarations]
+   BIO_set_nbio(conn->write, 1);
+   ^
+mini_ssl.c: In function 'get_dh1024':
+mini_ssl.c:64:3: warning: 'DH_new' is deprecated (declared at /usr/include/openssl/dh.h:184) [-Wdeprecated-declarations]
+   dh = DH_new();
+   ^
+mini_ssl.c:65:3: warning: 'BN_bin2bn' is deprecated (declared at /usr/include/openssl/bn.h:422) [-Wdeprecated-declarations]
+   dh->p = BN_bin2bn(dh1024_p, sizeof(dh1024_p), NULL);
+   ^
+mini_ssl.c:66:3: warning: 'BN_bin2bn' is deprecated (declared at /usr/include/openssl/bn.h:422) [-Wdeprecated-declarations]
+   dh->g = BN_bin2bn(dh1024_g, sizeof(dh1024_g), NULL);
+   ^
+mini_ssl.c:69:5: warning: 'DH_free' is deprecated (declared at /usr/include/openssl/dh.h:185) [-Wdeprecated-declarations]
+     DH_free(dh);
+     ^
+mini_ssl.c: In function 'engine_init_server':
+mini_ssl.c:89:3: warning: 'SSL_CTX_new' is deprecated (declared at /usr/include/openssl/ssl.h:1351) [-Wdeprecated-declarations]
+   ctx = SSL_CTX_new(SSLv23_server_method());
+   ^
+mini_ssl.c:89:3: warning: 'SSLv23_server_method' is deprecated (declared at /usr/include/openssl/ssl.h:1521) [-Wdeprecated-declarations]
+mini_ssl.c:92:3: warning: 'SSL_CTX_use_certificate_file' is deprecated (declared at /usr/include/openssl/ssl.h:1407) [-Wdeprecated-declarations]
+   SSL_CTX_use_certificate_file(ctx, RSTRING_PTR(cert), SSL_FILETYPE_PEM);
+   ^
+mini_ssl.c:93:3: warning: 'SSL_CTX_use_PrivateKey_file' is deprecated (declared at /usr/include/openssl/ssl.h:1406) [-Wdeprecated-declarations]
+   SSL_CTX_use_PrivateKey_file(ctx, RSTRING_PTR(key), SSL_FILETYPE_PEM);
+   ^
+mini_ssl.c:95:3: warning: 'SSL_CTX_ctrl' is deprecated (declared at /usr/include/openssl/ssl.h:1503) [-Wdeprecated-declarations]
+   SSL_CTX_set_options(ctx, SSL_OP_CIPHER_SERVER_PREFERENCE | SSL_OP_NO_SSLv2 | SSL_OP_NO_SSLv3 | SSL_OP_SINGLE_DH_USE | SSL_OP_SINGLE_ECDH_USE);
+   ^
+mini_ssl.c:96:3: warning: 'SSL_CTX_ctrl' is deprecated (declared at /usr/include/openssl/ssl.h:1503) [-Wdeprecated-declarations]
+   SSL_CTX_set_session_cache_mode(ctx, SSL_SESS_CACHE_OFF);
+   ^
+mini_ssl.c:98:3: warning: 'SSL_CTX_set_cipher_list' is deprecated (declared at /usr/include/openssl/ssl.h:1350) [-Wdeprecated-declarations]
+   SSL_CTX_set_cipher_list(ctx, "HIGH:!aNULL@STRENGTH");
+   ^
+mini_ssl.c:101:3: warning: 'SSL_CTX_ctrl' is deprecated (declared at /usr/include/openssl/ssl.h:1503) [-Wdeprecated-declarations]
+   SSL_CTX_set_tmp_dh(ctx, dh);
+   ^
+mini_ssl.c:103:3: warning: 'EC_KEY_new_by_curve_name' is deprecated (declared at /usr/include/openssl/ec.h:306) [-Wdeprecated-declarations]
+   EC_KEY *ecdh = EC_KEY_new_by_curve_name(NID_secp521r1);
+   ^
+mini_ssl.c:105:5: warning: 'SSL_CTX_ctrl' is deprecated (declared at /usr/include/openssl/ssl.h:1503) [-Wdeprecated-declarations]
+     SSL_CTX_set_tmp_ecdh(ctx, ecdh);
+     ^
+mini_ssl.c:106:5: warning: 'EC_KEY_free' is deprecated (declared at /usr/include/openssl/ec.h:307) [-Wdeprecated-declarations]
+     EC_KEY_free(ecdh);
+     ^
+mini_ssl.c:109:3: warning: 'SSL_new' is deprecated (declared at /usr/include/openssl/ssl.h:1486) [-Wdeprecated-declarations]
+   ssl =  SSL_new(ctx);
+   ^
+mini_ssl.c:114:3: warning: 'SSL_set_bio' is deprecated (declared at /usr/include/openssl/ssl.h:1380) [-Wdeprecated-declarations]
+   SSL_set_bio(ssl, conn->read, conn->write);
+   ^
+mini_ssl.c:116:3: warning: 'SSL_set_accept_state' is deprecated (declared at /usr/include/openssl/ssl.h:1554) [-Wdeprecated-declarations]
+   SSL_set_accept_state(ssl);
+   ^
+mini_ssl.c: In function 'engine_init_client':
+mini_ssl.c:124:3: warning: 'SSL_CTX_new' is deprecated (declared at /usr/include/openssl/ssl.h:1351) [-Wdeprecated-declarations]
+   conn->ctx = SSL_CTX_new(DTLSv1_method());
+   ^
+mini_ssl.c:124:3: warning: 'DTLSv1_method' is deprecated (declared at /usr/include/openssl/ssl.h:1528) [-Wdeprecated-declarations]
+mini_ssl.c:125:3: warning: 'SSL_new' is deprecated (declared at /usr/include/openssl/ssl.h:1486) [-Wdeprecated-declarations]
+   conn->ssl = SSL_new(conn->ctx);
+   ^
+mini_ssl.c:126:3: warning: 'SSL_set_verify' is deprecated (declared at /usr/include/openssl/ssl.h:1389) [-Wdeprecated-declarations]
+   SSL_set_verify(conn->ssl, SSL_VERIFY_NONE, NULL);
+   ^
+mini_ssl.c:128:3: warning: 'SSL_set_bio' is deprecated (declared at /usr/include/openssl/ssl.h:1380) [-Wdeprecated-declarations]
+   SSL_set_bio(conn->ssl, conn->read, conn->write);
+   ^
+mini_ssl.c:130:3: warning: 'SSL_set_connect_state' is deprecated (declared at /usr/include/openssl/ssl.h:1553) [-Wdeprecated-declarations]
+   SSL_set_connect_state(conn->ssl);
+   ^
+mini_ssl.c: In function 'engine_inject':
+mini_ssl.c:142:3: warning: 'BIO_write' is deprecated (declared at /usr/include/openssl/bio.h:597) [-Wdeprecated-declarations]
+   used = BIO_write(conn->read, RSTRING_PTR(str), (int)RSTRING_LEN(str));
+   ^
+mini_ssl.c: In function 'raise_error':
+mini_ssl.c:154:3: warning: 'SSL_get_error' is deprecated (declared at /usr/include/openssl/ssl.h:1506) [-Wdeprecated-declarations]
+   int error = SSL_get_error(ssl, result);
+   ^
+mini_ssl.c:155:3: warning: 'ERR_error_string' is deprecated (declared at /usr/include/openssl/err.h:279) [-Wdeprecated-declarations]
+   char* msg = ERR_error_string(error, NULL);
+   ^
+mini_ssl.c:157:3: warning: 'ERR_clear_error' is deprecated (declared at /usr/include/openssl/err.h:278) [-Wdeprecated-declarations]
+   ERR_clear_error();
+   ^
+mini_ssl.c: In function 'engine_read':
+mini_ssl.c:168:3: warning: 'SSL_read' is deprecated (declared at /usr/include/openssl/ssl.h:1498) [-Wdeprecated-declarations]
+   bytes = SSL_read(conn->ssl, (void*)buf, sizeof(buf));
+   ^
+mini_ssl.c:174:3: warning: 'SSL_want' is deprecated (declared at /usr/include/openssl/ssl.h:1357) [-Wdeprecated-declarations]
+   if(SSL_want_read(conn->ssl)) return Qnil;
+   ^
+mini_ssl.c:176:3: warning: 'SSL_get_error' is deprecated (declared at /usr/include/openssl/ssl.h:1506) [-Wdeprecated-declarations]
+   if(SSL_get_error(conn->ssl, bytes) == SSL_ERROR_ZERO_RETURN) {
+   ^
+mini_ssl.c: In function 'engine_write':
+mini_ssl.c:194:3: warning: 'SSL_write' is deprecated (declared at /usr/include/openssl/ssl.h:1500) [-Wdeprecated-declarations]
+   bytes = SSL_write(conn->ssl, (void*)RSTRING_PTR(str), (int)RSTRING_LEN(str));
+   ^
+mini_ssl.c:199:3: warning: 'SSL_want' is deprecated (declared at /usr/include/openssl/ssl.h:1357) [-Wdeprecated-declarations]
+   if(SSL_want_write(conn->ssl)) return Qnil;
+   ^
+mini_ssl.c: In function 'engine_extract':
+mini_ssl.c:214:3: warning: 'BIO_ctrl' is deprecated (declared at /usr/include/openssl/bio.h:600) [-Wdeprecated-declarations]
+   pending = BIO_pending(conn->write);
+   ^
+mini_ssl.c:216:5: warning: 'BIO_read' is deprecated (declared at /usr/include/openssl/bio.h:595) [-Wdeprecated-declarations]
+     bytes = BIO_read(conn->write, buf, sizeof(buf));
+     ^
+mini_ssl.c:219:5: warning: 'BIO_test_flags' is deprecated (declared at /usr/include/openssl/bio.h:209) [-Wdeprecated-declarations]
+     } else if(!BIO_should_retry(conn->write)) {
+     ^
+mini_ssl.c: In function 'Init_mini_ssl':
+mini_ssl.c:230:3: warning: 'SSL_library_init' is deprecated (declared at /usr/include/openssl/ssl.h:1558) [-Wdeprecated-declarations]
+   SSL_library_init();
+   ^
+mini_ssl.c:231:3: warning: 'SSL_library_init' is deprecated (declared at /usr/include/openssl/ssl.h:1558) [-Wdeprecated-declarations]
+   OpenSSL_add_ssl_algorithms();
+   ^
+mini_ssl.c:232:3: warning: 'SSL_load_error_strings' is deprecated (declared at /usr/include/openssl/ssl.h:1421) [-Wdeprecated-declarations]
+   SSL_load_error_strings();
+   ^
+mini_ssl.c:233:3: warning: 'ERR_load_crypto_strings' is deprecated (declared at /usr/include/openssl/err.h:296) [-Wdeprecated-declarations]
+   ERR_load_crypto_strings();
+   ^
+compiling puma_http11.c
+linking shared-object puma/puma_http11.bundle
+ld: warning: directory not found for option '-L/Users/mpapis/.sm/pkg/active/lib'
+
+make "DESTDIR=" install
+/usr/bin/install -m 0755 puma_http11.bundle ./.gem.20141201-57521-39qtxy/puma
+installing default puma_http11 libraries
