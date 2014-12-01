@@ -1,1 +1,26 @@
-<div id="container">Loading...</div>
+<h1>Bitcrap</h1>
+
+<%= form_for @order, remote: true, method: :post, :html => {:multipart => true} do |f| %>
+  <%= f.label 'Amount' %><br/>
+  <%= f.label :amount, 1, value: 1 %>
+  <%= f.radio_button :amount, 1 %>
+
+  <%= f.label :amount, 2, value: 2 %>
+  <%= f.radio_button :amount, 2 %>
+
+  <%= f.label :amount, 5, value: 5 %>
+  <%= f.radio_button :amount, 5 %>
+
+  <%= f.label :amount, 10, value: 10 %>
+  <%= f.radio_button :amount, 10 %>
+
+  <%= f.fields_for :shipping_address do |s| %>
+    <%= s.text_field :address_line_1, placeholder: 'Address' %>
+    <%= s.text_field :address_line_2, placeholder: 'Address' %>
+    <%= s.text_field :city, placeholder: 'Address' %>
+
+    <%= s.select :state, options_for_select(us_states) %>
+    <%= s.text_field :zip_code, placeholder: 'Address' %>
+  <% end %>
+  <%= f.submit %>
+<% end %>

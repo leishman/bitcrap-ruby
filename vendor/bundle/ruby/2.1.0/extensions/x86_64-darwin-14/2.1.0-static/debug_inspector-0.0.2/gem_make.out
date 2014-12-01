@@ -1,0 +1,13 @@
+/Users/jason/.rvm/rubies/ruby-2.1.5/bin/ruby -r ./siteconf20141201-60170-10xzz4k.rb extconf.rb 
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+ld: warning: directory not found for option '-L/Users/mpapis/.sm/pkg/active/lib'
+
+make "DESTDIR=" install
+/usr/bin/install -m 0755 debug_inspector.bundle ./.gem.20141201-60170-1y7260q
+installing default debug_inspector libraries

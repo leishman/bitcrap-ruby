@@ -1,15 +1,20 @@
 class OrdersController < ApplicationController
-  respond_to :json
 
   def index
-    respond_with Order.all
+    @orders = Order.all
   end
 
   def show
-    respond_with Order.find_by(uid:params[:uid])
+    @order = Order.find_by(uid:params[:uid])
   end
 
   def create
-    respond_with Order.create(params[:order])
+    @order = Order.create(order_params)
+  end
+
+  private
+
+  def order_params
+    params.require(:order).permit(:amount, shipping_address_attributes: [:address_line_1, :address_line_2, :address_line_3, :city, :state, :zip_code, presence: true])
   end
 end
