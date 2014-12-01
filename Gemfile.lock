@@ -21,10 +21,6 @@ GEM
       activemodel (= 4.1.8)
       activesupport (= 4.1.8)
       arel (~> 5.0.0)
-    activeresource (4.0.0)
-      activemodel (~> 4.0)
-      activesupport (~> 4.0)
-      rails-observers (~> 0.1.1)
     activesupport (4.1.8)
       i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
@@ -32,15 +28,6 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
-    backbone-on-rails (1.1.2.0)
-      actionmailer
-      actionpack
-      activemodel
-      activeresource
-      eco
-      ejs
-      jquery-rails
-      railties
     builder (3.2.2)
     byebug (3.5.1)
       columnize (~> 0.8)
@@ -56,12 +43,6 @@ GEM
     columnize (0.8.9)
     debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
-    eco (1.0.0)
-      coffee-script
-      eco-source
-      execjs
-    eco-source (1.1.0.rc.1)
-    ejs (1.1.1)
     erubis (2.7.0)
     execjs (2.2.2)
     hike (1.2.3)
@@ -93,8 +74,6 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.8)
       sprockets-rails (~> 2.0)
-    rails-observers (0.1.2)
-      activemodel (~> 4.0)
     railties (4.1.8)
       actionpack (= 4.1.8)
       activesupport (= 4.1.8)
@@ -159,7 +138,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  backbone-on-rails
   byebug
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
