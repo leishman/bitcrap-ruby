@@ -1,11 +1,11 @@
 class OrdersController < ApplicationController
 
   def index
-    @orders = Order.all
+    # @orders = Order.all
   end
 
   def show
-    @order = Order.find_by(uid:params[:uid])
+    # @order = Order.find_by(uid:params[:uid])
   end
 
   def create

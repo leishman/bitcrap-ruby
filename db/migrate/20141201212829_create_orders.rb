@@ -6,6 +6,7 @@ class CreateOrders < ActiveRecord::Migration
       t.string  :name
       t.string  :email
       t.string  :notes
+      t.string  :uid
       t.timestamps
     end
   end
