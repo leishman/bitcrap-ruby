@@ -1,5 +1,5 @@
-<h2 class="center-box">Order Confirmation:</h2>
-<div class="order-confirmation">
+<div class="order-confirmation animation-slide-in-right">
+  <h2 class="center-box">Order Confirmation:</h2>
   <table>
     <tr>
       <td class="table-label">Name:</td>
@@ -34,5 +34,5 @@
       <td class="table-data"><%= @address.zip_code %></td>
     </tr>
   </table>
-  <%= link_to 'Pay with Bitcoin', @checkout.checkout_url, target: '_blank', class: "btn center-box" %>
+  <%= link_to 'Pay with Bitcoin', @checkout.checkout_url, target: '_blank', class: "btn center-box animation-pulse-color" %>
 </div>

@@ -33,7 +33,7 @@ class OrdersController < ApplicationController
   def build_request
     param_builder = MaiCoin::CheckoutParamBuilder.new
     amount = @order.amount
-    currency = @order.currency
+    currency = 'usd'#@order.currency
     return_url = 'https://bitcrap.com/return'
     cancel_url = 'https://bitcrap.com/cancel'
     callback_url = 'https://bitcrap.com/maicoin/callback'

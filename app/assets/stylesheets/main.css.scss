@@ -1,3 +1,9 @@
+// variables
+
+$dark_green: green;
+$light_green: lightgreen;
+
+
 * {
   box-sizing: border-box;
 }
@@ -81,7 +87,7 @@ body {
   display: block;
   font-size: 16px;
   line-height: 40px;
-  background-color: lightgreen;
+  background-color: $light_green;
   border: none;
   -webkit-appearance: none;
   border-radius: 5px;
@@ -91,7 +97,7 @@ body {
   color: #000;
 
   &:hover {
-    background-color: green;
+    background-color: $dark_green;
     color: #FFF;
   }
 }
@@ -143,4 +149,86 @@ table {
   height: 150px;
   width: 100%;
   text-align: center;
+}
+
+
+// animations
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animation-slide-in-right {
+  animation-name: fadeInRight;
+  -webkit-animation-name: fadeInRight;
+
+  animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
+
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+}
+
+.animation-pulse-color {
+  -webkit-animation-name: pulseColor;
+
+  animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes pulseColor {
+  0% {
+    background-color: $light_green;
+    color: #000;
+  }
+
+  50% {
+    background-color: $dark_green;
+    color: #FFF;
+  }
+
+  100% {
+    background-color: $light_green;
+    color: #000;
+  }
+}
+
+@keyframes pulseColor {
+  0% {
+    background-color: $light_green;
+    color: #000;
+  }
+
+  50% {
+    background-color: $dark_green;
+    color: #FFF;
+  }
+
+  100% {
+    background-color: $light_green;
+    color: #000;
+  }
 }
