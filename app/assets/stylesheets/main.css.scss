@@ -1,9 +1,14 @@
+body {
+  background-color: lightgray;
+}
+
 .form-inline {
   .inline-group {
     width: 33%;
   }
 }
 
-.order-confirmation {
-  
+.masthead, .featurette {
+  height: 150px;
+  width: 100%;
 }

@@ -1,1 +1,1 @@
-::MaicoinClient = MaiCoin::Client.new('2a91afc597c6bb40', '609020e99fc424ee36475a604a8e962e')
+::MaicoinClient = MaiCoin::Client.new('1d8d36eb3050d3f7', 'fdc055d5054f2306c1de7ff9d01773cd')

@@ -1,6 +1,12 @@
-<h1>Bitcrap</h1>
+<div class="masthead">
+  <h1>Bitcrap</h1>
+  <p>Pay a small amount of Bitcoin and receive a fun, surprise gift in the mail</p>
+  <p>You won't know ahead of time what you are going to get. We try to make the gifts fun and entertaining</p>
+</div>
 
-<div></div>
+<div class="featurette">
+  
+</div>
 
 <div id="checkout">
   <div id="errors" class="bg-danger"></div>
@@ -14,7 +20,7 @@
       <%= f.radio_button :amount, 2 %>
 
       <%= f.label :amount, '$5', value: 5 %>
-      <%= f.radio_button :amount, 5 %>
+      <%= f.radio_button :amount, 5, checked: true %>
 
       <%= f.label :amount, '$10', value: 10 %>
       <%= f.radio_button :amount, 10 %>
