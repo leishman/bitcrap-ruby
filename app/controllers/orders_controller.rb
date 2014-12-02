@@ -38,7 +38,7 @@ class OrdersController < ApplicationController
     cancel_url = 'https://bitcrap.com/cancel'
     callback_url = 'https://bitcrap.com/maicoin/callback'
     opts = {
-      "merchant_ref_id" => @order.id,
+      "merchant_ref_id" => @order.uid,
       "locale" => "en"
     }
     param_builder.set_checkout_data(amount, currency, return_url, cancel_url, callback_url, opts)

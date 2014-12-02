@@ -4,5 +4,6 @@ FactoryGirl.define do
     notes { Faker::Lorem.sentence }
     name { Faker::Name.name }
     email { Faker::Internet.email }
+    status 'unpaid'
   end
 end

@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20141201215121) do
     t.string   "email"
     t.string   "notes"
     t.string   "uid"
+    t.string   "status",     default: "unpaid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

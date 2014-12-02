@@ -4,6 +4,7 @@ describe Order do
   it { should validate_presence_of :amount }
   it { should validate_presence_of :name }
   it { should validate_presence_of :email }
+  it { should validate_presence_of :status }
 
   it "should set the uid" do
     order = FactoryGirl.create(:order)
