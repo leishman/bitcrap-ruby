@@ -1,1 +1,12 @@
-<%= link_to 'Pay', @checkout['checkout']['checkout_url'], target: '_blank' %>
+<h3>Order Confirmation</h3>
+<div class="order-confirmation">
+  <ul>
+    <li>Amount: <%= @checkout['checkout']['amount'] %></li>
+    <li>Address 1: <%= @checkout['checkout']['buyer']['buyer_address1'] %></li>
+    <li>Address 2: <%= @checkout['checkout']['buyer']['buyer_address2'] %></li>
+    <li>City: <%= @checkout['checkout']['buyer']['buyer_city'] %></li>
+    <li>State: <%= @checkout['checkout']['buyer']['buyer_state'] %></li>
+    <li>Zip Code: <%= @checkout['checkout']['buyer']['buyer_zip'] %></li>
+  </ul>
+  <%= link_to 'Pay', @checkout['checkout']['checkout_url'], target: '_blank', class: "btn btn-primary" %>
+</div>

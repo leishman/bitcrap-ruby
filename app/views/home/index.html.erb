@@ -1,22 +1,25 @@
 <h1>Bitcrap</h1>
 
+<div></div>
+
 <div id="checkout">
   <div id="errors" class="bg-danger"></div>
   <%= form_for @order, remote: true, method: :post, :html => { multipart: true, role: 'form', class: 'col-md-8' } do |f| %>
     <div>
-      <%= f.label 'Amount' %><br/>
-      <%= f.label :amount, 1, value: 1 %>
+      <h3>Amount</h3>
+      <%= f.label :amount, '$1', value: 1 %>
       <%= f.radio_button :amount, 1 %>
 
-      <%= f.label :amount, 2, value: 2 %>
+      <%= f.label :amount, '$2', value: 2 %>
       <%= f.radio_button :amount, 2 %>
 
-      <%= f.label :amount, 5, value: 5 %>
+      <%= f.label :amount, '$5', value: 5 %>
       <%= f.radio_button :amount, 5 %>
 
-      <%= f.label :amount, 10, value: 10 %>
+      <%= f.label :amount, '$10', value: 10 %>
       <%= f.radio_button :amount, 10 %>
     </div>
+    <br/>
 
     <%= f.fields_for :shipping_address do |s| %>
       <div class="form-group">
@@ -27,8 +30,8 @@
       </div>
       <div class="form-group form-inline">
         <%= s.text_field :city, placeholder: 'City', class: 'form-control' %>
-      <%= s.select :state, options_for_select(us_states), { prompt: 'State' }, class: 'form-control' %>
-      <%= s.text_field :zip_code, placeholder: 'Zip Code', prompt: 'State', class: 'form-control' %>
+        <%= s.select :state, options_for_select(us_states), { prompt: 'Select State' }, class: 'form-control' %>
+        <%= s.text_field :zip_code, placeholder: 'Zip Code', prompt: 'State', class: 'form-control' %>
       </div>
     <% end %>
     <%= f.submit 'Submit', class: 'btn btn-primary' %>
