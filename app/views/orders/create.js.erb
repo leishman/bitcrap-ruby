@@ -1,0 +1,5 @@
+<% if @order.valid? %>
+  $('#checkout').html("<%=j render partial: 'success' %>")
+<% else %>
+  $('#errors').html("<%=j render partial: 'fail' %>")
+<% end %>
