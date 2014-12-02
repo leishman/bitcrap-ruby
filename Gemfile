@@ -30,7 +30,6 @@ gem 'puma'
 
 gem 'maicoin', git: 'git@github.com:huuep/maicoin-ruby.git'
 
-gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
 
 group :development, :test do

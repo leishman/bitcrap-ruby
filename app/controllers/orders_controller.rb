@@ -12,7 +12,12 @@ class OrdersController < ApplicationController
     @order = Order.create(order_params)
     if @order.valid?
       builder = build_request
-      @checkout = ::MaicoinClient.create_checkout(builder.build)
+      if @checkout = ::MaicoinClient.create_checkout(builder.build).checkout
+        @address = @order.shipping_address
+      else
+        @errors = ['Checkout Failed. Please Try later']
+        render :create, status: 406
+      end
     else
       @errors = @order.errors.messages
       render :create, status: 406
@@ -22,7 +27,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:amount, shipping_address_attributes: [:address_line_1, :address_line_2, :address_line_3, :city, :state, :zip_code])
+    params.require(:order).permit(:amount, :name, :email, shipping_address_attributes: [:address_line_1, :address_line_2, :address_line_3, :city, :state, :zip_code])
   end
 
   def build_request
@@ -33,7 +38,7 @@ class OrdersController < ApplicationController
     cancel_url = 'https://bitcrap.com/cancel'
     callback_url = 'https://bitcrap.com/maicoin/callback'
     opts = {
-      "merchant_ref_id" => "order_id_#{@order.id}",
+      "merchant_ref_id" => @order.id,
       "locale" => "en"
     }
     param_builder.set_checkout_data(amount, currency, return_url, cancel_url, callback_url, opts)

@@ -1,14 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: lightgray;
+  background-color: white;
+  font-size: 14px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
+
+// utilities
+
+.center-box {
+  display: block;
+  margin: 0 auto;
+}
+
+.left {
+  float: left;
+}
+
+
+//
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.checkout-form {
+  width: 500px;
+}
+
+.form-control {
+  width: 100%;
+  margin: 5px 5px 5px 0;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 16px;
+  border: none;
+  border: 1px solid #AAA;
+  border-radius: 5px;
+}
+
+.radio-buttons {
+  font-size: 16px;
+  background-color: #FFCD5F;
+  padding: 10px;
+  border-radius: 5px;
+
+  .radio-buttons-main-label {
+    margin-right: 20px;
+  }
+
+  input[type="radio"] {
+    width: 30px;
+    height: 15px;
+  }
 }
 
 .form-inline {
-  .inline-group {
-    width: 33%;
+  .form-control {
+    display: inline-block;
+    margin: 5px 0;
+    width: 32.8%;
+  }
+}
+
+::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+// .amount-box {
+//   display: inline-block;
+
+//   h3 {
+//     display: inline-block;
+//   }
+// }
+
+.btn {
+  height: 40px;
+  width: 200px;
+  -webkit-appearance: button;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  line-height: 40px;
+  background-color: lightgreen;
+  border: none;
+  -webkit-appearance: none;
+  border-radius: 5px;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: green;
+    color: #FFF;
   }
 }
 
 .masthead, .featurette {
   height: 150px;
   width: 100%;
+  text-align: center;
 }

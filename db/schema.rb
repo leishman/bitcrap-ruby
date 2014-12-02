@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 20141201215121) do
   create_table "orders", force: true do |t|
     t.integer  "amount"
     t.string   "currency",   default: "usd"
+    t.string   "name"
+    t.string   "email"
     t.string   "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
