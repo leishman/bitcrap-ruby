@@ -8,9 +8,9 @@
 
 </div>
 
-<div id="checkout">
-  <div id="errors" class="bg-danger"></div>
-  <%= form_for @order, remote: true, method: :post, :html => { multipart: true, role: 'form', class: 'checkout-form center-box' } do |f| %>
+<div id="checkout" class="center-box">
+  <%= form_for @order, remote: true, method: :post, :html => { multipart: true, role: 'form', class: 'checkout-form' } do |f| %>
+    <div id="errors" class="errors"></div>
     <div class="amount-box">
       <div class="radio-buttons">
       <b class="radio-buttons-main-label">Amount: </b>

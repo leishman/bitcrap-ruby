@@ -27,9 +27,11 @@ body {
   margin: 0 auto;
 }
 
-.checkout-form {
+#checkout {
   width: 500px;
 }
+
+// forms
 
 .form-control {
   width: 100%;
@@ -71,14 +73,6 @@ body {
     padding: 0;
 }
 
-// .amount-box {
-//   display: inline-block;
-
-//   h3 {
-//     display: inline-block;
-//   }
-// }
-
 .btn {
   height: 40px;
   width: 200px;
@@ -92,6 +86,9 @@ body {
   -webkit-appearance: none;
   border-radius: 5px;
   margin-top: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
 
   &:hover {
     background-color: green;
@@ -99,6 +96,49 @@ body {
   }
 }
 
+
+// lists
+
+ul {
+  list-style: none;
+}
+
+// tables
+
+table {
+  width: 100%;
+  font-size: 16px;
+
+  .table-label {
+    // text-align: right;
+    font-weight: bold;
+  }
+
+  .table-data {
+    text-align: left;
+  }
+
+  tr {
+    border-bottom: solid 1px #DDD;
+  }
+
+  td {
+    padding: 10px;
+  }
+}
+
+
+// errors
+
+.errors {
+  background-color: #F7BED8;
+  border-radius: 5px;
+
+  li {
+    padding: 5px 0;
+    font-weight: bold;
+  }
+}
 .masthead, .featurette {
   height: 150px;
   width: 100%;

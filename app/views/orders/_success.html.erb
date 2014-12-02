@@ -1,14 +1,38 @@
-<h3>Order Confirmation</h3>
+<h2 class="center-box">Order Confirmation:</h2>
 <div class="order-confirmation">
-  <ul>
-    <li>Name: <%= @checkout.amount %></li>
-    <li>Email: <%= @checkout.email %></li>
-    <li>Amount: <%= @checkout.amount %></li>
-    <li>Address 1: <%= @address.address_line_1 %></li>
-    <li>Address 2: <%= @address.address_line_2 %></li>
-    <li>City: <%= @address.city %></li>
-    <li>State: <%= @address.state %></li>
-    <li>Zip Code: <%= @address.zip_code %></li>
-  </ul>
-  <%= link_to 'Pay', @checkout.checkout_url, target: '_blank', class: "btn btn-primary" %>
+  <table>
+    <tr>
+      <td class="table-label">Name:</td>
+      <td class="table-data"><%= @order.name %></td>
+    </tr>
+    <tr>
+      <td class="table-label">Email:</td>
+      <td class="table-data"><%= @order.email %></td>
+    </tr>
+    <tr>
+      <td class="table-label">Amount:</td>
+      <td class="table-data"><%= @order.amount %></td>
+    </tr>
+    <tr>
+      <td class="table-label">Address Line 1:</td>
+      <td class="table-data"><%= @address.address_line_1 %></td>
+    </tr>
+    <tr>
+      <td class="table-label">Address Line 2:</td>
+      <td class="table-data"><%= @address.address_line_2 %></td>
+    </tr>
+    <tr>
+      <td class="table-label">City:</td>
+      <td class="table-data"><%= @address.city %></td>
+    </tr>
+    <tr>
+      <td class="table-label">State:</td>
+      <td class="table-data"><%= @address.state %></td>
+    </tr>
+    <tr>
+      <td class="table-label">Zip Code:</td>
+      <td class="table-data"><%= @address.zip_code %></td>
+    </tr>
+  </table>
+  <%= link_to 'Pay with Bitcoin', @checkout.checkout_url, target: '_blank', class: "btn center-box" %>
 </div>
