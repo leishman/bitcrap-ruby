@@ -2,7 +2,9 @@
 
 $dark_green: green;
 $light_green: lightgreen;
+$mobile_breakpoint: 640px;
 
+@import url(http://fonts.googleapis.com/css?family=Lato);
 
 * {
   box-sizing: border-box;
@@ -11,8 +13,8 @@ $light_green: lightgreen;
 body {
   background-color: white;
   font-size: 14px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
+  font-family: 'Lato', sans-serif;
+  padding-top: 60px;
 }
 
 // utilities
@@ -27,7 +29,37 @@ body {
 }
 
 
-//
+// General
+
+.navbar, .footer {
+  position: fixed;
+  background-color: #222;
+  color: #FFF;
+  width: 100%;
+  text-align: center;
+}
+
+.navbar {
+  top: 0;
+  height: 60px;
+  line-height: 60px;
+  vertical-align: center;
+
+  h1 {
+    margin-top: 0;
+    color: #FFF;
+    text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+}
+
+.footer {
+  bottom: 0;
+}
+
 .container {
   width: 800px;
   margin: 0 auto;
@@ -35,6 +67,11 @@ body {
 
 #checkout {
   width: 500px;
+}
+
+.checkout-row {
+  padding: 20px;
+  background-color: #EEE;
 }
 
 // forms
@@ -90,10 +127,10 @@ body {
   background-color: $light_green;
   border: none;
   -webkit-appearance: none;
+  border: 1px solid lightgray;
   border-radius: 5px;
   margin-top: 10px;
   text-align: center;
-  text-decoration: none;
   color: #000;
 
   &:hover {
@@ -133,6 +170,12 @@ table {
   }
 }
 
+// links
+
+a {
+  text-decoration: none;
+}
+
 
 // errors
 
@@ -145,10 +188,27 @@ table {
     font-weight: bold;
   }
 }
+
 .masthead, .featurette {
-  height: 150px;
+  height: auto;
   width: 100%;
-  text-align: center;
+  display: block;
+}
+
+.masthead p {
+  font-size: 20px;
+  text-align: left;
+}
+
+.featurette {
+  display: flex;
+  flex-direction: row;
+
+  .sub-featurette {
+    width: 250px;
+    padding: 0 15px;
+    font-size: 20px;
+  }
 }
 
 
@@ -230,5 +290,82 @@ table {
   100% {
     background-color: $light_green;
     color: #000;
+  }
+}
+
+@keyframes hinge {
+  0% {
+    transform-origin: 45% 50% 0;
+    animation-timing-function: ease-in-out;
+  }
+
+  20%, 60% {
+    transform: rotate3d(0, 0, 1, 80deg);
+    transform-origin: 45% 50% 0;
+    animation-timing-function: ease-in-out;
+  }
+
+  40%, 80% {
+    transform: rotate3d(0, 0, 1, 60deg);
+    transform-origin: 45% 50% 0;
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(0, 700px, 0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes hinge {
+  0% {
+    transform-origin: 45% 50% 0;
+    animation-timing-function: ease-in-out;
+  }
+
+  20%, 60% {
+    transform: rotate3d(0, 0, 1, 80deg);
+    transform-origin: 45% 50% 0;
+    animation-timing-function: ease-in-out;
+  }
+
+  40%, 80% {
+    transform: rotate3d(0, 0, 1, 60deg);
+    transform-origin: 45% 50% 0;
+    animation-timing-function: ease-in-out;
+  }
+
+  100% {
+    transform: translate3d(0, 700px, 0);
+  }
+}
+
+.animation-hinge {
+  animation-name: hinge;
+  -webkit-animation-name: hinge;
+
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+@media screen and (max-width: $mobile_breakpoint) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  #checkout {
+    width: 100%;
+  }
+
+  .featurette .sub-featurette {
+    padding: 0 2px;
   }
 }
