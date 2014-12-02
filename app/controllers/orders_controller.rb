@@ -36,9 +36,10 @@ class OrdersController < ApplicationController
     currency = 'usd'#@order.currency
     return_url = 'https://bitcrap.com/return'
     cancel_url = 'https://bitcrap.com/cancel'
-    callback_url = 'https://bitcrap.com/maicoin/callback'
+    callback_url = url_for(controller: :callback, action: :callback)
     opts = {
-      "merchant_ref_id" => @order.uid,
+      "merchant_ref_id" => @order.ref_id,
+      "pos_data" => @order.secret_id,
       "locale" => "en"
     }
     param_builder.set_checkout_data(amount, currency, return_url, cancel_url, callback_url, opts)

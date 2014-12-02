@@ -6,7 +6,8 @@ class CreateOrders < ActiveRecord::Migration
       t.string  :name
       t.string  :email
       t.string  :notes
-      t.string  :uid
+      t.string  :secret_id
+      t.string  :ref_id
       t.string  :status, default: 'unpaid'
       t.timestamps
     end
