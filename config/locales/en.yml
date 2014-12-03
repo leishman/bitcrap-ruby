@@ -20,4 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      order:
+        name: Name
+        amount: Amount
+        email: Email Address
+      shipping_address:
+        address_line_1: Primary Address
+        address_line_2: Secondary Address
+        address_line_3: Extra Address Line
+        city: City
+        state: State
+        zip_code: Zip Code

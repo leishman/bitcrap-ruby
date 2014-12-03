@@ -1,5 +1,5 @@
 <div class="order-confirmation animation-slide-in-right">
-  <h2 class="center-box">Order Confirmation:</h2>
+  <h3>Please confirm the information below:</h3><br/>
   <table>
     <tr>
       <td class="table-label">Name:</td>
@@ -34,6 +34,7 @@
       <td class="table-data"><%= @address.zip_code %></td>
     </tr>
   </table>
+  <p>After payment you will receive a confirmation email. You will receive your surprise gift within a few weeks.</p>
   <%= link_to 'Pay with Bitcoin', @checkout.checkout_url, target: '_blank', class: "btn center-box animation-pulse-color" %>
   <%= link_to 'Start Over', '/', class: 'center-box start-over' %>
 </div>

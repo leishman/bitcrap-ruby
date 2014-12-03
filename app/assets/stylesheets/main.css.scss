@@ -32,46 +32,96 @@ body {
 // General
 
 .navbar, .footer {
-  position: fixed;
-  background-color: #222;
+  // background-color: #222;
   color: #FFF;
   width: 100%;
   text-align: center;
 }
 
+
 .navbar {
+  position: fixed;
   top: 0;
   height: 60px;
   line-height: 60px;
   vertical-align: center;
-
-  h1 {
-    margin-top: 0;
-    color: #FFF;
-    text-shadow:
-      -1px -1px 0 #000,
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-      1px 1px 0 #000;
-  }
 }
 
 .footer {
   bottom: 0;
 }
 
+.logo {
+  h1 {
+    margin: 0;
+    color: black;
+    font-size: 40px;
+  }
+}
+
+.tagline {
+  float: right;
+}
+
+.masthead {
+  border-bottom: solid 1px lightgray;
+}
+
+.masthead, .featurette {
+  height: auto;
+  width: 100%;
+  display: block;
+}
+
+.masthead .masthead-box {
+  display: inline-block;
+}
+
 .container {
-  width: 800px;
+  width: 900px;
+  min-height: 800px;
   margin: 0 auto;
 }
 
-#checkout {
-  width: 500px;
-}
-
-.checkout-row {
+.main-container {
   padding: 20px;
-  background-color: #EEE;
+  margin: 0 0 30px 0;
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  .business-description {
+    text-align: center;
+  }
+
+  .showcase, .checkout-box {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .showcase {
+    margin-top: 20px;
+    width: 420px;
+    color: #999;
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  .checkout-box {
+    margin-top: 50px;
+    margin-left: 20px;
+    width: 400px;
+  }
+
+  .directions {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: #EEE;
+  }
 }
 
 // forms
@@ -189,26 +239,9 @@ a {
   }
 }
 
-.masthead, .featurette {
-  height: auto;
-  width: 100%;
-  display: block;
-}
-
-.masthead p {
-  font-size: 20px;
-  text-align: left;
-}
-
-.featurette {
-  display: flex;
-  flex-direction: row;
-
-  .sub-featurette {
-    width: 250px;
-    padding: 0 15px;
-    font-size: 20px;
-  }
+.start-over {
+  padding-top: 10px;
+  text-align: center;
 }
 
 
@@ -314,7 +347,7 @@ a {
 
   100% {
     transform: translate3d(0, 700px, 0);
-    opacity: 0;
+    color: brown;
   }
 }
 
@@ -338,6 +371,7 @@ a {
 
   100% {
     transform: translate3d(0, 700px, 0);
+    color: brown;
   }
 }
 

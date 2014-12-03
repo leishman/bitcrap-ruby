@@ -1,39 +1,65 @@
 
 <div class="masthead">
-  <p>Are you tired of knowing what you're going to get when you buy something?</p>
-  <p>Well, here at Bitcrap we are dedicated to solving this problem. Stop wasting your time CHOOSING products to purchase on sites like Amazon (laaammee) and Overstock (more like wasting-my-time-stock).</p>
-</div>
-
-<div class="featurette">
-  <div class="sub-featurette">
-    <p>1. Select Amount to spend <br/> (The higher the amount, the cooler the gift)</p>
+  <div class="logo masthead-box">
+    <a href="/"><h1 class="animation-hinge">Bitcrap</h1></a>
   </div>
-  <div class="sub-featurette">
-    <p>2. Enter your contact and shipping information</p>
-  </div>
-  <div class="sub-featurette">
-    <p>3. Pay with Bitcoin and wait for your package in the mail</p>
+  <div class="tagline masthead-box">
+    <h2>The Store of the Future</h2>
   </div>
 </div>
 
-<div class="checkout-row">
-  <div id="checkout" class="center-box">
+<div class="main-container">
+  <div class="business-description">
+    <h2>Tired of knowing what you're buying? We can help!</h2>
+    <h3>Pay Between $1 and $10 (in Bitcoin) and receive a fun, surprise gift in the mail.</h3>
+  </div>
+  <div class="showcase">
+    <%= image_tag 'box_question_mark.jpg' %>
+
+    <h2>Customer Testimonials</h2>
+    <h3>Mao Zedong</h3>
+    <em class="location">Beijing, China</em>
+    <p>
+      "Communism would have worked if Bitcrap was around because everyone would be happy spending the little money they got."
+    </p>
+    <h3>Winston Churchill</h3>
+    <em class="location">London, England</em>
+    <p>
+      "Never has my wench so desired a gift as the one I bought her from Bitcrap."
+    </p>
+    <h3>Vladamir Putin</h3>
+    <em class="location">Moscow, Russia</em>
+    <p>
+      "I can fly women in from all over the world, I have had tigers as pet, but nothing excites me more than receiving my gift from Bitcrap."
+    </p>
+    <h3>George Washington</h3>
+    <em class="location">Washington, D.C.</em>
+    <p>
+      "They say I never lied, but I once stole some Bitcoin from my mother's purse just to buy some Bitcrap."
+    </p>
+  </div>
+  <div id="checkout" class="checkout-box">
+    <div class="directions">
+      <p>1. Select Amount to spend (The higher the amount, the cooler the gift)</p>
+      <p>2. Enter your contact and shipping information</p>
+      <p>3. Pay with Bitcoin and wait for your surprise package in the mail</p>
+    </div>
     <%= form_for @order, remote: true, method: :post, :html => { multipart: true, role: 'form', class: 'checkout-form' } do |f| %>
       <div id="errors" class="errors"></div>
       <div class="amount-box">
         <div class="radio-buttons">
         <b class="radio-buttons-main-label">Amount: </b>
-          <%= f.label :amount, '$1', value: 1 %>
           <%= f.radio_button :amount, 1 %>
+          <%= f.label :amount, '$1', value: 1 %>
 
-          <%= f.label :amount, '$2', value: 2 %>
           <%= f.radio_button :amount, 2 %>
+          <%= f.label :amount, '$2', value: 2 %>
 
-          <%= f.label :amount, '$5', value: 5 %>
           <%= f.radio_button :amount, 5, checked: true %>
+          <%= f.label :amount, '$5', value: 5 %>
 
-          <%= f.label :amount, '$10', value: 10 %>
           <%= f.radio_button :amount, 10 %>
+          <%= f.label :amount, '$10', value: 10 %>
         </div>
       </div>
       <br/>

@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
         render :create, status: 406
       end
     else
-      @errors = @order.errors.messages
+      @errors = @order.errors.full_messages
       render :create, status: 406
     end
   end
