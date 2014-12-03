@@ -2,7 +2,7 @@
 # lock '3.2.1'
 
 set :application, 'bitcrap'
-set :repo_url, 'git@github.com:leishman/bitcrap-ruby.git'
+set :repository, 'git@github.com:leishman/bitcrap-ruby.git'
 
 set :ssh_options, {
   keys: File.join(ENV["HOME"], ".ssh", "id_rsa"),
