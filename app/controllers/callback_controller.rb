@@ -5,6 +5,7 @@ class CallbackController < ApplicationController
     if order = Order.find_by(secret_id: params[:checkout][:pos_data])
       order.status = params[:checkout][:status]
       order.save!
+      render json: {}, :status => 200
     else
       raise 'could not find order'
     end

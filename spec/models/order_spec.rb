@@ -8,7 +8,7 @@ describe Order do
 
   it "should set the secret_id and ref_id" do
     order = FactoryGirl.create(:order)
-    expect(order.secret_id.length).to eq 18
-    expect(order.ref_id.length).to eq 9
+    expect(order.secret_id.length).to eq 22
+    expect(order.ref_id.length).to eq 18
   end
 end
