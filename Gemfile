@@ -28,7 +28,7 @@ gem 'spring',        group: :development
 
 gem 'puma'
 
-gem 'maicoin', git: 'git@github.com:huuep/maicoin-ruby.git'
+gem 'maicoin', git: 'git@github.com:leishman/maicoin-ruby.git'
 
 gem 'autoprefixer-rails'
 

@@ -11,16 +11,18 @@
     </tr>
     <tr>
       <td class="table-label">Amount:</td>
-      <td class="table-data"><%= @order.amount %></td>
+      <td class="table-data">$<%= @order.amount %></td>
     </tr>
     <tr>
       <td class="table-label">Address Line 1:</td>
       <td class="table-data"><%= @address.address_line_1 %></td>
     </tr>
+    <% if !@address.address_line_2.blank? %>
     <tr>
       <td class="table-label">Address Line 2:</td>
       <td class="table-data"><%= @address.address_line_2 %></td>
     </tr>
+    <% end %>
     <tr>
       <td class="table-label">City:</td>
       <td class="table-data"><%= @address.city %></td>
