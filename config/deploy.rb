@@ -4,6 +4,12 @@
 set :application, 'bitcrap'
 set :repo_url, 'git@github.com:leishman/bitcrap-ruby.git'
 
+set :ssh_options, {
+  keys: File.join(ENV["HOME"], ".ssh", "id_rsa"),
+  forward_agent: true,
+  auth_methods: %w(publickey)
+}
+
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
