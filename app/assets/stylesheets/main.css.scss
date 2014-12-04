@@ -2,6 +2,7 @@
 
 $dark_green: green;
 $light_green: lightgreen;
+$dark_green: #528C4B;
 $mobile_breakpoint: 640px;
 
 @import url(http://fonts.googleapis.com/css?family=Lato);
@@ -28,6 +29,10 @@ body {
   float: left;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 
 // General
 
@@ -49,12 +54,12 @@ body {
 
 .footer {
   bottom: 0;
+  color: black;
 }
 
 .logo {
   h1 {
     margin: 0;
-    color: black;
     font-size: 40px;
   }
 }
@@ -63,8 +68,15 @@ body {
   float: right;
 }
 
-.masthead {
+.masthead, .footer {
   border-bottom: solid 1px lightgray;
+  background-color: $dark_green;
+  padding: 15px 20px;
+  color: white;
+
+  a {
+    color: white;
+  }
 }
 
 .masthead, .featurette {
@@ -150,6 +162,7 @@ body {
   input[type="radio"] {
     width: 30px;
     height: 15px;
+    margin-right: -10px;
   }
 }
 
@@ -390,12 +403,29 @@ a {
 }
 
 @media screen and (max-width: $mobile_breakpoint) {
+  .hide_mobile {
+    display: none;
+  }
+
   .container {
     width: 100%;
     padding: 0 15px;
   }
 
-  #checkout {
+  .masthead {
+    text-align: center;
+  }
+
+  .main-container {
+    padding: 0;
+  }
+
+  .main-container .checkout-box {
+    width: 100%;
+    margin: 0;
+  }
+
+  .main-container .showcase {
     width: 100%;
   }
 
