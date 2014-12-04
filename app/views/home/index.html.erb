@@ -45,9 +45,11 @@
   </div>
   <div id="checkout" class="checkout-box">
     <div class="directions">
-      <p>1. Select Amount to spend (The higher the amount, the cooler the gift)</p>
-      <p>2. Enter your contact and shipping information</p>
-      <p>3. Pay with Bitcoin and wait for your surprise package in the mail</p>
+      <ol class="directions-list">
+        <li>Select Amount to spend (The higher the amount, the cooler the gift)</li>
+        <li>Enter your contact and shipping information</li>
+        <li>Pay with Bitcoin and wait for your surprise package in the mail</li>
+      </ol>
     </div>
     <%= form_for @order, remote: true, method: :post, :html => { multipart: true, role: 'form', class: 'checkout-form' } do |f| %>
       <div id="errors" class="errors"></div>
