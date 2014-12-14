@@ -13,7 +13,6 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 gem 'dotenv-rails', :require => 'dotenv/rails-now'
-gem 'dotenv-deployment'
 
 gem 'mysql2'
 
