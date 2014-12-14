@@ -1,7 +1,9 @@
 <% if @order %>
-  <h3>Thank you for your order <%= @order.name %></h3>
+  <h3>Thank you for your order, <%= @order.name %></h3>
   <h3>An email has been sent to <%= @order.email %></h3>
-  <h3>Your order status is currently: <%= @order.status %></h3>
+  <h3>You can keep updated on the status of your order here:</h3>
+  <a href="<%= order_url(@order.ref_id) %>"><%= order_url(@order.ref_id) %></a>
+  <h3>Your order status is currently: <b><%= @order.status %></b></h3>
   <h3>It may take a few minutes for the status to update after payment</h3>
   <h3>Refresh this page to see the updated status</h3>
   <p>If you did not get an email, please contact customer service: <a href="mailto:support@bitcrap.com">support@bitcrap.com</a></p>

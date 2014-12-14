@@ -34,6 +34,9 @@ gem 'autoprefixer-rails'
 
 gem 'exception_notification'
 
+gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
+
 group :development, :test do
   gem 'byebug'
   gem 'better_errors'
