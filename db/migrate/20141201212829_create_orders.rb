@@ -11,5 +11,6 @@ class CreateOrders < ActiveRecord::Migration
       t.string  :status, default: 'unpaid'
       t.timestamps
     end
+    add_index :orders, :email
   end
 end

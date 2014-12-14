@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20141201215121) do
     t.datetime "updated_at"
   end
 
+  add_index "orders", ["email"], name: "index_orders_on_email", using: :btree
+
   create_table "shipping_addresses", force: true do |t|
     t.integer  "order_id"
     t.string   "address_line_1"
