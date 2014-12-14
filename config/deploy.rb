@@ -1,7 +1,7 @@
 # Change these
-server '104.236.156.114', port: 39450, roles: [:web, :app, :db], primary: true
+# server '104.236.156.114', port: 39450, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@example.com:leishman/bitcrap-ruby.git'
+set :repo_url,        'git@github.com:leishman/bitcrap-ruby.git'
 set :application,     'bitcrap'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
