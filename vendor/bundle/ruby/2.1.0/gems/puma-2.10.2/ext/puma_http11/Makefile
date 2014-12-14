@@ -11,12 +11,12 @@ ECHO = $(ECHO1:0=@echo)
 #### Start of system configuration section. ####
 
 srcdir = .
-topdir = /Users/jason/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0
+topdir = /usr/local/rvm/rubies/ruby-2.1.5/include/ruby-2.1.0
 hdrdir = $(topdir)
-arch_hdrdir = /Users/jason/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/x86_64-darwin14.0
+arch_hdrdir = /usr/local/rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/x86_64-darwin14.0
 PATH_SEPARATOR = :
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
-prefix = $(DESTDIR)/Users/jason/.rvm/rubies/ruby-2.1.5
+prefix = $(DESTDIR)/usr/local/rvm/rubies/ruby-2.1.5
 rubysitearchprefix = $(rubylibprefix)/$(sitearch)
 rubyarchprefix = $(rubylibprefix)/$(arch)
 rubylibprefix = $(libdir)/$(RUBY_BASE_NAME)
@@ -30,8 +30,8 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
-sitearchdir = $(DESTDIR)./.gem.20141201-57521-39qtxy
-sitelibdir = $(DESTDIR)./.gem.20141201-57521-39qtxy
+sitearchdir = $(DESTDIR)./.gem.20141213-5511-5o1tr6
+sitelibdir = $(DESTDIR)./.gem.20141213-5511-5o1tr6
 sitedir = $(rubylibprefix)/site_ruby
 rubyarchdir = $(rubylibdir)/$(arch)
 rubylibdir = $(rubylibprefix)/$(ruby_version)

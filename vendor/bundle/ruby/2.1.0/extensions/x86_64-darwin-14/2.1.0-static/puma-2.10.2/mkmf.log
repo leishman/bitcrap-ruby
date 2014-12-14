@@ -1,6 +1,6 @@
 have_library: checking for SSL_CTX_new() in -lssl... -------------------- yes
 
-"gcc -o conftest -I/Users/jason/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/jason/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/ruby/backward -I/Users/jason/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe conftest.c  -L. -L/Users/jason/.rvm/rubies/ruby-2.1.5/lib -L. -L/Users/mpapis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64   -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+"gcc -o conftest -I/usr/local/rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/x86_64-darwin14.0 -I/usr/local/rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/ruby/backward -I/usr/local/rvm/rubies/ruby-2.1.5/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe conftest.c  -L. -L/usr/local/rvm/rubies/ruby-2.1.5/lib -L. -L/Users/mpapis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64   -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
 ld: warning: directory not found for option '-L/Users/mpapis/.sm/pkg/active/lib'
 checked program was:
 /* begin */
@@ -12,12 +12,11 @@ checked program was:
 6: }
 /* end */
 
-"gcc -o conftest -I/Users/jason/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/jason/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/ruby/backward -I/Users/jason/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe conftest.c  -L. -L/Users/jason/.rvm/rubies/ruby-2.1.5/lib -L. -L/Users/mpapis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64   -lruby-static -framework CoreFoundation -lssl  -lpthread -ldl -lobjc "
-conftest.c: In function 't':
-conftest.c:13:57: error: 'SSL_CTX_new' undeclared (first use in this function)
- int t(void) { void ((*volatile p)()); p = (void ((*)()))SSL_CTX_new; return 0; }
-                                                         ^
-conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+"gcc -o conftest -I/usr/local/rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/x86_64-darwin14.0 -I/usr/local/rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/ruby/backward -I/usr/local/rvm/rubies/ruby-2.1.5/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe conftest.c  -L. -L/usr/local/rvm/rubies/ruby-2.1.5/lib -L. -L/Users/mpapis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64   -lruby-static -framework CoreFoundation -lssl  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'SSL_CTX_new'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))SSL_CTX_new; return 0; }
+                                                        ^
+1 error generated.
 checked program was:
 /* begin */
  1: #include "ruby.h"
@@ -35,7 +34,11 @@ checked program was:
 13: int t(void) { void ((*volatile p)()); p = (void ((*)()))SSL_CTX_new; return 0; }
 /* end */
 
-"gcc -o conftest -I/Users/jason/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/jason/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/ruby/backward -I/Users/jason/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe conftest.c  -L. -L/Users/jason/.rvm/rubies/ruby-2.1.5/lib -L. -L/Users/mpapis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64   -lruby-static -framework CoreFoundation -lssl  -lpthread -ldl -lobjc "
+"gcc -o conftest -I/usr/local/rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/x86_64-darwin14.0 -I/usr/local/rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/ruby/backward -I/usr/local/rvm/rubies/ruby-2.1.5/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe conftest.c  -L. -L/usr/local/rvm/rubies/ruby-2.1.5/lib -L. -L/Users/mpapis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64   -lruby-static -framework CoreFoundation -lssl  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'SSL_CTX_new' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { SSL_CTX_new(); return 0; }
+              ^
+1 warning generated.
 ld: warning: directory not found for option '-L/Users/mpapis/.sm/pkg/active/lib'
 checked program was:
 /* begin */
@@ -58,12 +61,11 @@ checked program was:
 
 have_library: checking for BIO_read() in -lcrypto... -------------------- yes
 
-"gcc -o conftest -I/Users/jason/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/jason/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/ruby/backward -I/Users/jason/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe conftest.c  -L. -L/Users/jason/.rvm/rubies/ruby-2.1.5/lib -L. -L/Users/mpapis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lssl  -lruby-static -framework CoreFoundation -lcrypto -lssl  -lpthread -ldl -lobjc "
-conftest.c: In function 't':
-conftest.c:13:57: error: 'BIO_read' undeclared (first use in this function)
- int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return 0; }
-                                                         ^
-conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+"gcc -o conftest -I/usr/local/rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/x86_64-darwin14.0 -I/usr/local/rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/ruby/backward -I/usr/local/rvm/rubies/ruby-2.1.5/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe conftest.c  -L. -L/usr/local/rvm/rubies/ruby-2.1.5/lib -L. -L/Users/mpapis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lssl  -lruby-static -framework CoreFoundation -lcrypto -lssl  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'BIO_read'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return 0; }
+                                                        ^
+1 error generated.
 checked program was:
 /* begin */
  1: #include "ruby.h"
@@ -81,7 +83,11 @@ checked program was:
 13: int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return 0; }
 /* end */
 
-"gcc -o conftest -I/Users/jason/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/jason/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/ruby/backward -I/Users/jason/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe conftest.c  -L. -L/Users/jason/.rvm/rubies/ruby-2.1.5/lib -L. -L/Users/mpapis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lssl  -lruby-static -framework CoreFoundation -lcrypto -lssl  -lpthread -ldl -lobjc "
+"gcc -o conftest -I/usr/local/rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/x86_64-darwin14.0 -I/usr/local/rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/ruby/backward -I/usr/local/rvm/rubies/ruby-2.1.5/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe conftest.c  -L. -L/usr/local/rvm/rubies/ruby-2.1.5/lib -L. -L/Users/mpapis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lssl  -lruby-static -framework CoreFoundation -lcrypto -lssl  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'BIO_read' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { BIO_read(); return 0; }
+              ^
+1 warning generated.
 ld: warning: directory not found for option '-L/Users/mpapis/.sm/pkg/active/lib'
 checked program was:
 /* begin */
