@@ -74,11 +74,6 @@ namespace :deploy do
     end
   end
 
-  desc "Symlink application config files."
-  task :symlink do
-    run "ln -s {#{shared_path},#{release_path}}/config/secrets.yml"  
-  end
-
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
