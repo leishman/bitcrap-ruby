@@ -8,7 +8,8 @@ class CallbackController < ApplicationController
       @order.save!
       render json: {}, :status => 200
     else
-      raise 'could not find order'
+      render json: {}, :status => 406
+      BitcrapMailer.admin_warning("#{request.inspect}")
     end
   end
 

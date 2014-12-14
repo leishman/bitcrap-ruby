@@ -32,6 +32,8 @@ gem 'maicoin', git: 'git@github.com:leishman/maicoin-ruby.git'
 
 gem 'autoprefixer-rails'
 
+gem 'exception_notification'
+
 group :development, :test do
   gem 'byebug'
   gem 'better_errors'

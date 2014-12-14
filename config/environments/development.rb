@@ -29,6 +29,15 @@ Rails.application.configure do
     :password  => ENV["MANDRILL_API_KEY"]
   }
 
+
+  config.middleware.use ExceptionNotification::Rack,
+    :email => {
+      :email_prefix => "Error Occured ",
+      :sender_address => %{"notifier" <support@bitcrap.com>},
+      :exception_recipients => %w{leishman3@gmail.com}
+    }
+
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
