@@ -9,6 +9,8 @@ class CreateOrders < ActiveRecord::Migration
       t.string  :secret_id
       t.string  :ref_id
       t.string  :status, default: 'unpaid'
+      t.boolean :has_shipped, default: false
+      t.text  :shipping_notes
       t.timestamps
     end
     add_index :orders, :email

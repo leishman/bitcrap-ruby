@@ -13,3 +13,4 @@ class BitcrapMailer < ActionMailer::Base
     mail(to: 'leishman3@gmail.com', subject: "#{Rails.env} | Issue on server ")
   end
 end
+

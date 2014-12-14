@@ -5,5 +5,6 @@ FactoryGirl.define do
     name { Faker::Name.name }
     email { Faker::Internet.email }
     status 'unpaid'
+    has_shipped false
   end
 end

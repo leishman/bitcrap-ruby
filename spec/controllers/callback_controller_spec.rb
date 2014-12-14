@@ -16,11 +16,11 @@ describe CallbackController do
     end.to change { order.reload.status }.from('unpaid').to('paid')
   end
 
-  it "should raise an error if it cannot find the order" do
+  it "should return failure if it cannot find the order" do
     order = FactoryGirl.create(:shipping_address).order
     params = {"checkout"=>{"uid"=>"MAI_465b3efdba698640be908d0b1aa85cf6fe22c96e0af5", "created_at"=>"2014-12-03 18:14:12 UTC", "status"=>"paid", "currency_amount"=>"5.0", "currency_type"=>"usd", "merchant_ref_id"=>order.ref_id, "pos_data"=>'random'}}
-    expect do
-      post :callback, params
-    end.to raise_error
+    post :callback, params
+    expect(response.status).to eq 406
+    expect(order.reload.status).to eq 'unpaid'
   end
 end
