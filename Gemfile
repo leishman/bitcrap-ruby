@@ -12,7 +12,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
-gem 'dotenv-rails', :require => 'dotenv/rails-now', :groups => [:development, :test, :production]
+gem 'dotenv-rails'
 
 gem 'mysql2'
 
