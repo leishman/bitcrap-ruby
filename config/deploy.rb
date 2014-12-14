@@ -1,3 +1,4 @@
+require "dotenv/deployment/capistrano"
 # Change these
 # server '104.236.156.114', port: 39450, roles: [:web, :app, :db], primary: true
 
