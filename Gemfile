@@ -37,6 +37,8 @@ gem 'exception_notification'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 
+gem 'dotenv'
+
 group :development, :test do
   gem 'byebug'
   gem 'better_errors'
