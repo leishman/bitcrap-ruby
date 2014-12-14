@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get '/cancel/:ref_id', to: 'orders#cancel'
 
   resources :shipping_addresses, only: [:create]
-  resources :orders, only: [:create, :show]
+  resources :orders, only: [:create, :show], param: 'ref_id'
 end

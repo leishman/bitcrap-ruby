@@ -1,11 +1,7 @@
 class OrdersController < ApplicationController
 
-  def index
-    # @orders = Order.all
-  end
-
   def show
-    # @order = Order.find_by(uid:params[:uid])
+    @order = Order.find_by(ref_id: params[:ref_id])
   end
 
   def create
@@ -24,12 +20,7 @@ class OrdersController < ApplicationController
     end
   end
 
-  def return
-    @order = Order.find_by(ref_id: params[:ref_id])
-  end
-
   def cancel
-    @order = Order.find_by(ref_id: params[:ref_id])
   end
 
   private
@@ -42,8 +33,8 @@ class OrdersController < ApplicationController
     param_builder = MaiCoin::CheckoutParamBuilder.new
     amount = @order.amount
     currency = @order.currency
-    return_url = "http://104.236.170.222/return/#{@order.ref_id}"
-    cancel_url = "http://104.236.170.222/cancel/#{@order.ref_id}"
+    return_url = "http://104.236.170.222/order/#{@order.ref_id}"
+    cancel_url = "http://104.236.170.222/cancel"
     callback_url = url_for(controller: :callback, action: :callback)
     opts = {
       "merchant_ref_id" => @order.ref_id,

@@ -1,0 +1,10 @@
+<% if @order %>
+  <h3>Thank you for your order <%= @order.name %></h3>
+  <h3>An email has been sent to <%= @order.email %></h3>
+  <h3>Your order status is currently: <%= @order.status %></h3>
+  <h3>It may take a few minutes for the status to update after payment</h3>
+  <h3>Refresh this page to see the updated status</h3>
+  <p>If you did not get an email, please contact customer service: <a href="mailto:support@bitcrap.com">support@bitcrap.com</a></p>
+<% else %>
+  <h3>Order not found</h3>
+<% end %>
