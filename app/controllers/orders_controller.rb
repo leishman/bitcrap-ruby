@@ -36,7 +36,7 @@ class OrdersController < ApplicationController
     # TODO remove hard coding of URLs
     return_url = "https://bitcrap.com/orders/#{@order.ref_id}"
     cancel_url = "https://bitcrap.com/cancel"
-    callback_url = url_for(controller: :callback, action: :callback)
+    callback_url = "https://bitcrap.com/aslfkjw232"#url_for(controller: :callback, action: :callback)
     opts = {
       "merchant_ref_id" => @order.ref_id,
       "pos_data" => @order.secret_id,
