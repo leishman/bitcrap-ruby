@@ -47,7 +47,7 @@ Rails.application.configure do
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'bitcrap.com', protocol: 'https' }
   config.action_mailer.delivery_method = :smtp
 
   # change to true to allow email to be sent during development
