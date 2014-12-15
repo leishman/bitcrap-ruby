@@ -1,4 +1,6 @@
 ActiveAdmin.register ShippingAddress do
+  # belongs_to :order
+  actions :all, except: [:destroy, :update, :create]
 
 
   # See permitted parameters documentation:
