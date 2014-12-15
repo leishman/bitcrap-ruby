@@ -1,5 +1,5 @@
 class BitcrapMailer < ActionMailer::Base
-  default from: "support@bitcrap.com"
+  default from: '"Bitcrap <support@bitcrap.com>"'
 
   # Input: Order object
   def order_confirmation(order)
