@@ -23,8 +23,7 @@ ActiveAdmin.setup do |config|
   # Set the default namespace each administration resource
   # will be added to.
   #
-  # eg:
-  #   config.default_namespace = :hello_world
+  config.default_namespace = :fhynfjamal
   #
   # This will create resources in the HelloWorld module and
   # will namespace routes to /hello_world/*
