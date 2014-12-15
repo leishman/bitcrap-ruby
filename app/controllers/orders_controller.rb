@@ -33,8 +33,9 @@ class OrdersController < ApplicationController
     param_builder = MaiCoin::CheckoutParamBuilder.new
     amount = @order.amount
     currency = @order.currency
-    return_url = "http://104.236.170.222/order/#{@order.ref_id}"
-    cancel_url = "http://104.236.170.222/cancel"
+    # TODO remove hard coding of URLs
+    return_url = "https://bitcrap.com/order/#{@order.ref_id}"
+    cancel_url = "https://bitcrap.com/cancel"
     callback_url = url_for(controller: :callback, action: :callback)
     opts = {
       "merchant_ref_id" => @order.ref_id,
