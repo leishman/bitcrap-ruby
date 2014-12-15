@@ -34,7 +34,7 @@ class OrdersController < ApplicationController
     amount = @order.amount
     currency = @order.currency
     # TODO remove hard coding of URLs
-    return_url = "https://bitcrap.com/order/#{@order.ref_id}"
+    return_url = "https://bitcrap.com/orders/#{@order.ref_id}"
     cancel_url = "https://bitcrap.com/cancel"
     callback_url = url_for(controller: :callback, action: :callback)
     opts = {
