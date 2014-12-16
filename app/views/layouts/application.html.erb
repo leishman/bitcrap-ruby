@@ -5,6 +5,9 @@
   <meta name="description" content="Buy random mail order gifts with Bitcoin.">
   <meta name=viewport content="width=device-width, initial-scale=1"
   <meta charset="utf-8">
+  <%= stylesheet_link_tag'application', media: 'all' %>
+  <%= javascript_include_tag 'application', async: true %>
+  <%= csrf_meta_tags %>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -13,11 +16,7 @@
 
     ga('create', 'UA-57678729-1', 'auto');
     ga('send', 'pageview');
-
   </script>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
 </head>
   <body>
     <div class="container">
