@@ -79,8 +79,8 @@
         </div>
         <div class="form-group form-inline">
           <%= s.text_field :city, placeholder: 'City', class: 'form-control' %>
-          <%= s.select :state, options_for_select(us_states), { prompt: 'Select State' }, class: 'form-control' %>
-          <%= s.text_field :zip_code, placeholder: 'Zip Code', prompt: 'State', class: 'form-control' %>
+          <%= s.select :state, options_for_select(us_states), { prompt: 'State' }, class: 'form-control' %>
+          <%= s.text_field :zip_code, placeholder: 'Zip Code', class: 'form-control' %>
         </div>
       <% end %>
       <%= f.submit 'Submit', class: 'btn btn-primary center-box', data: { disable_with: 'Submitting...' } %>

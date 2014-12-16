@@ -25,8 +25,15 @@
           <a href="/"><h1 class="animation-hinge">Bitcrap</h1></a>
         </div>
         <%= image_tag 'btc_logo.svg', class: 'btc-logo', width: 40 %>
+
         <div class="tagline masthead-box">
           <h2 class="hide_mobile">The Store of the Future</h2>
+          <div class="fb-like"
+            data-href="https://bitcrap.com"
+            data-layout="button" data-action="like"
+            data-show-faces="false"
+            data-share="false">
+          </div>
         </div>
       </div>
       <div class="container inner-container">
@@ -36,5 +43,23 @@
         &copy; 2014 &nbsp; Bitcrap</a>
       </div>
     </div>
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '320404751483285',
+          xfbml      : true,
+          version    : 'v2.2'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
   </body>
 </html>

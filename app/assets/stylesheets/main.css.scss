@@ -66,6 +66,14 @@ body {
 
 .tagline {
   float: right;
+  h2 {
+    margin: 5px 0;
+  }
+}
+
+.fb-like {
+  float: right;
+  overflow: hidden;
 }
 
 .masthead, .footer {
