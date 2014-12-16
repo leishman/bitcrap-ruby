@@ -6,6 +6,11 @@ class Order < ActiveRecord::Base
   validates :amount, presence: true, numericality: { greater_than: 0 }
   validates :name, :email, :status, presence: true
 
+
+  def shipping_status
+    has_shipped ? 'Shipped' : 'Not Shipped'
+  end
+
   private
 
   def set_secret_id

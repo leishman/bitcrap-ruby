@@ -278,6 +278,22 @@ a {
   color: lightgray;
 }
 
+// order show page
+
+.order-status-container {
+  width: 600px;
+}
+
+.order-status-title {
+  .unpaid, .underpaid, .overpaid {
+    color: red;
+  }
+
+  .paid {
+    color: green;
+  }
+}
+
 // animations
 
 @keyframes fadeInRight {
@@ -427,7 +443,7 @@ a {
     display: none;
   }
 
-  .outer-container {
+  .container {
     width: 100%;
   }
 
@@ -448,10 +464,6 @@ a {
     margin: 0;
   }
 
-  .main-container .showcase {
-    width: 100%;
-  }
-
   .featurette .sub-featurette {
     padding: 0 2px;
   }
@@ -462,6 +474,16 @@ a {
       margin: 5px 0;
       width: 32.5%;
     }
+  }
+
+  .confirmation-img {
+    width: 100%;
+  }
+
+  // turn off hinge animation on mobile
+  .animation-hinge {
+    animation-name: initial;
+    -webkit-animation-name: initial;
   }
 }
 

@@ -11,4 +11,11 @@ describe Order do
     expect(order.secret_id.length).to eq 22
     expect(order.ref_id.length).to eq 18
   end
+
+  it "should show shipping status" do
+    order = FactoryGirl.create(:order)
+    expect(order.shipping_status).to eq 'Not Shipped'
+    order.has_shipped = true; order.save
+    expect(order.shipping_status).to eq 'Shipped'
+  end
 end

@@ -1,12 +1,21 @@
-<% if @order %>
-  <h3>Thank you for your order, <%= @order.name %></h3>
-  <h3>An email has been sent to <%= @order.email %></h3>
-  <h3>You can keep updated on the status of your order here:</h3>
-  <a href="<%= order_url(@order.ref_id) %>"><%= order_url(@order.ref_id) %></a>
-  <h3>Your order status is currently: <b><%= @order.status %></b></h3>
-  <h3>It may take a few minutes for the status to update after payment</h3>
-  <h3>Refresh this page to see the updated status</h3>
-  <p>If you did not get an email, please contact customer service: <a href="mailto:support@bitcrap.com">support@bitcrap.com</a></p>
-<% else %>
-  <h3>Order not found</h3>
-<% end %>
+<div class="order-status-container center-box container">
+  <% if @order %>
+    <h1 class="order-status-title">Order Status: <span class="<%= @order.status %>"><%= @order.status.titleize %></span></h1>
+    <h1>Shipping Status: <span><%= @order.shipping_status %></span></h1>
+    <aside>(Statuses may take a few minutes to update, please refresh to update)</aside>
+    <hr>
+    <h3>Thank you for your order, <%= @order.name %></h3>
+    <p>An confirmation email has been sent to <b class="underline"><%= @order.email %></b>.</p>
+    <br/>
+    <%= image_tag 'its_happening.gif', width: 400, class: 'confirmation-img' %>
+    <p>You can stay updated on the status of your order on this page.</p>
+    <p>Here is the link for your convenience:</p>
+    <a href="<%= order_url(@order.ref_id) %>"><%= order_url(@order.ref_id) %></a>
+    <p>If you did not get an email, please contact our Customer Support Team: <a href="mailto:support@bitcrap.com">support@bitcrap.com</a></p>
+  <% else %>
+    <br/>
+    <h3>Order not found</h3>
+    <p>please contact our Customer Support Team: <a href="mailto:support@bitcrap.com">support@bitcrap.com</a></p>
+  <% end %>
+  <br/><br/>
+</div>
