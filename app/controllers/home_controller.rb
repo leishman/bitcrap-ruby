@@ -15,7 +15,8 @@ class HomeController < ApplicationController
       'Gifts, Made Thoughtless',
       "Mo' Money, Mo' Bitcrap",
       'Young Money, Hash Money',
-      'Because, Why Not?'
+      'Because, Why Not?',
+      "Don't Think, Just Buy"
     ].sample
   end
 end
