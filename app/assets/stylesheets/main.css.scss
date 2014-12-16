@@ -85,10 +85,14 @@ body {
   display: inline-block;
 }
 
-.container {
+.outer-container {
   width: 900px;
   min-height: 800px;
   margin: 0 auto;
+}
+
+.inner-container {
+  width: 100%;
 }
 
 .main-container {
@@ -423,8 +427,11 @@ a {
     display: none;
   }
 
-  .container {
+  .outer-container {
     width: 100%;
+  }
+
+  .inner-container {
     padding: 0 15px;
   }
 

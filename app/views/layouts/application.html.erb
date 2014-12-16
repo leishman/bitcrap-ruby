@@ -19,7 +19,7 @@
   </script>
 </head>
   <body>
-    <div class="container">
+    <div class="outer-container">
       <div class="masthead">
         <div class="logo masthead-box">
           <a href="/"><h1 class="animation-hinge">Bitcrap</h1></a>
@@ -28,10 +28,11 @@
           <h2 class="hide_mobile">The Store of the Future</h2>
         </div>
       </div>
-
-      <%= yield %>
+      <div class="inner-container">
+        <%= yield %>
+      </div>
       <div class="footer">
-        &copy; 2014 &nbsp; Bitcrap, Inc.</a>
+        &copy; 2014 &nbsp; Bitcrap</a>
       </div>
     </div>
   </body>
