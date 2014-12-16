@@ -13,9 +13,9 @@ class HomeController < ApplicationController
       'Store of the Future',
       'All Your Friends Are Doing It',
       'Gifts, Made Thoughtless',
-      "Mo Money, Mo' Bitcrap",
+      "Mo' Money, Mo' Bitcrap",
       'Young Money, Hash Money',
-      'Because Why Not?'
+      'Because, Why Not?'
     ].sample
   end
 end
