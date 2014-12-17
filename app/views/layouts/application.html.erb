@@ -19,30 +19,38 @@
   </script>
 </head>
   <body>
-    <div class="container outer-container">
-      <div class="masthead">
+    <div class="masthead">
+      <div class="masthead-inner center-box">
         <div class="logo masthead-box">
-          <a href="/"><h1 class="animation-hinge">Bitcrap</h1></a>
+          <a href="/"><h1 class="animation-hinge logo-text">Bitcrap</h1></a>
         </div>
         <%= image_tag 'btc_logo.svg', class: 'btc-logo', width: 40 %>
 
         <div class="tagline masthead-box">
-          <h2 class="hide_mobile"><%= @tagline %></h2>
-          <div class="fb-like"
+          <h2 class="hide-mobile"><%= @tagline %></h2>
+          <% if false %>
+          <div class="fb-like hide-mobile"
             data-href="https://bitcrap.com"
             data-layout="button" data-action="like"
             data-show-faces="false"
             data-share="false">
           </div>
-        </div>
-      </div>
+          <% end %>
+        </div> <%# end .tagline %>
+      </div> <%# end .mastead-inner %>
+    </div> <%# end .mastead %>
+    <div class="container outer-container">
       <div class="container inner-container">
         <%= yield %>
       </div>
-      <div class="footer">
-        &copy; 2014 &nbsp; Bitcrap</a>
-      </div>
     </div>
+    <div class="footer">
+      <div class="footer-inner center-box">
+        <p>&copy; 2014 &nbsp; Bitcrap</p>
+      </div>
+    </div> <%# end .footer %>
+
+    <% if false %>
     <div id="fb-root"></div>
     <script>
       window.fbAsyncInit = function() {
@@ -61,5 +69,6 @@
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
     </script>
+    <% end %>
   </body>
 </html>

@@ -6,6 +6,9 @@ class HomeController < ApplicationController
     @tagline = get_tagline
   end
 
+  def wtf
+  end
+
   private
 
   def get_tagline

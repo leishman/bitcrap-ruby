@@ -1,10 +1,15 @@
 // variables
 
+// colors
 $dark_green: green;
 $light_green: lightgreen;
 $dark_green: #528C4B;
+
+// dimensions
 $tablet_breakpoint: 640px;
 $mini_breakpoint: 380px;
+$main_width: 900px;
+$masthead_height: 80px;
 
 * {
   box-sizing: border-box;
@@ -53,11 +58,9 @@ body {
   color: black;
 }
 
-.logo {
-  h1 {
-    margin: 0;
-    font-size: 40px;
-  }
+.logo-text {
+  margin: 0;
+  font-size: 40px;
 }
 
 .btc-logo {
@@ -66,14 +69,15 @@ body {
 
 .tagline {
   float: right;
-  h2 {
-    margin: 5px 0;
-  }
 }
 
 .fb-like {
   float: right;
   overflow: hidden;
+}
+
+.masthead {
+  position: fixed;
 }
 
 .masthead, .footer {
@@ -88,19 +92,24 @@ body {
 }
 
 .masthead, .featurette {
-  height: auto;
+  height: $masthead_height;
   width: 100%;
   display: block;
 }
 
-.masthead .masthead-box {
+.masthead-box {
   display: inline-block;
 }
 
+.masthead-inner, .footer-inner {
+  width: $main_width;
+}
+
 .outer-container {
-  width: 900px;
-  min-height: 800px;
+  width: $main_width;
+  min-height: 500px;
   margin: 0 auto;
+  padding-top: $masthead_height;
 }
 
 .inner-container {
@@ -108,7 +117,7 @@ body {
 }
 
 .main-container {
-  padding: 20px;
+  padding: 20px 0;
   margin: 0 0 50px 0;
 
   h3 {
@@ -126,7 +135,7 @@ body {
 
   .showcase {
     margin-top: 20px;
-    width: 420px;
+    width: 50%;
     color: #999;
 
     img {
@@ -137,8 +146,9 @@ body {
 
   .checkout-box {
     margin-top: 50px;
-    margin-left: 20px;
-    width: 400px;
+    // margin-left: 20px;
+    float: right;
+    width: 49%;
   }
 
   .directions {
@@ -451,7 +461,7 @@ a {
 // }
 
 @media screen and (max-width: $tablet_breakpoint) {
-  .hide_mobile {
+  .hide-mobile {
     display: none;
   }
 
@@ -467,6 +477,10 @@ a {
     text-align: center;
   }
 
+  .masthead-inner, .footer-inner {
+    width: 100%;
+  }
+
   .main-container {
     padding: 0;
   }
@@ -474,6 +488,7 @@ a {
   .main-container .checkout-box {
     width: 100%;
     margin: 0;
+    float: none;
   }
 
   .featurette .sub-featurette {
