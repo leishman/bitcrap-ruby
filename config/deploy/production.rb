@@ -18,6 +18,7 @@ role :db,  %w{deploy@104.236.156.114}
 
 server 'deploy@104.236.156.114', user: 'deploy', roles: %w{web app}
 set :pty,  false
+set :sidekiq_concurrency, 4
 
 # Custom SSH Options
 # ==================
