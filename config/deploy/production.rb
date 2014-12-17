@@ -17,7 +17,7 @@ role :db,  %w{deploy@104.236.156.114}
 # used to set extended properties on the server.
 
 server 'deploy@104.236.156.114', user: 'deploy', roles: %w{web app}
-
+set :pty,  false
 
 # Custom SSH Options
 # ==================
