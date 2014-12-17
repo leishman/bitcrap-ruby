@@ -5,7 +5,7 @@ class BitcrapMailer < ActionMailer::Base
   def order_confirmation(order)
     @order = order
     @address = order.shipping_address
-    mail(to: @order.email, bcc: 'leishman3@gmail.com', subject: "Bitcrap Order for @order.name")
+    mail(to: @order.email, bcc: 'leishman3@gmail.com', subject: "Bitcrap Order for #{@order.name}")
   end
 
   def admin_warning(msg)
