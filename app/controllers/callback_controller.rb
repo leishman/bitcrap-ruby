@@ -9,7 +9,7 @@ class CallbackController < ApplicationController
       render json: {}, :status => 200
     else
       render json: {}, :status => 406
-      BitcrapMailer.admin_warning("#{request.inspect}")
+      BitcrapMailer.delay.admin_warning("#{request.inspect}")
     end
   end
 
@@ -17,6 +17,6 @@ class CallbackController < ApplicationController
 
   def send_order_confirmation
     return unless @order
-    BitcrapMailer.order_confirmation(@order).deliver
+    BitcrapMailer.delay.order_confirmation(@order).deliver
   end
 end

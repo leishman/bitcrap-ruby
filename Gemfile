@@ -38,6 +38,7 @@ gem 'exception_notification'
 
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
+gem 'sidekiq'
 
 group :development, :test do
   gem 'byebug'
@@ -54,6 +55,7 @@ group :development do
   gem 'capistrano-rails',   '~> 1.1', require: false
   gem 'capistrano-bundler', '~> 1.1', require: false
   gem 'capistrano-rvm',   '~> 0.1', require: false
+  gem 'capistrano-sidekiq',  require: false
 end
 
 group :test do
