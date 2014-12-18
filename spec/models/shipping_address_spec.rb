@@ -14,7 +14,6 @@ describe ShippingAddress do
     end
   end
 
-
   context "Zip Code" do
 
     it { should validate_numericality_of(:zip_code).is_greater_than(0).only_integer }

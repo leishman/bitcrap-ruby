@@ -1,4 +1,3 @@
-
 <div class="main-container">
   <div class="business-description">
     <h2>Tired of knowing what you're buying? We can help!</h2>
@@ -7,83 +6,9 @@
   </div>
   <div class="showcase container">
     <%= image_tag 'box_question_mark.jpg', height: 225, width: 280 %>
-
-    <h2>Customer Testimonials*</h2>
-    <h3>George Washington</h3>
-    <em class="location">Washington, D.C.</em>
-    <p>
-      "They say I never lied, but I once stole Bitcoin from my mother's purse just to buy some Bitcrap."
-    </p>
-    <h3>Vladimir Lenin</h3>
-    <em class="location">Москва, Россия</em>
-    <p>
-      "Communism would have worked if Bitcrap was around because everyone would be happy spending the little money they got."
-    </p>
-    <h3>Winston Churchill</h3>
-    <em class="location">London, England</em>
-    <p>
-      "Never has my wench so appreciated a gift as the one I bought her from Bitcrap."
-    </p>
-    <h3>Michael Moore</h3>
-    <em class="location">Micronesia</em>
-    <p>
-      "I hate Bitcrap. They never send me anything edible."
-    </p>
-    <h3>Vladimir Putin</h3>
-    <em class="location">Владивосток, Россия</em>
-    <p>
-      "I can fly women in from all over the world, I have tigers as pets, but nothing excites me more than receiving a gift from Bitcrap."
-    </p>
-    <p class="disclaimer">* Although it should go without saying, these testimonials are not real and for comedic purposes only.</p>
+    <%= render partial: 'testimonials' %>
   </div>
   <div id="checkout" class="container checkout-box">
-    <div class="directions">
-      <ol class="directions-list">
-        <li>Select Amount to spend (The higher the amount, the cooler the gift)</li>
-        <li>Enter your contact and shipping information</li>
-        <li>Pay with Bitcoin and wait for your surprise package in the mail</li>
-      </ol>
-    </div>
-    <%= form_for @order, remote: true, method: :post, :html => { multipart: true, role: 'form', class: 'checkout-form' } do |f| %>
-      <div id="errors" class="errors"></div>
-      <div class="amount-box">
-        <div class="radio-buttons">
-        <b class="radio-buttons-main-label">Amount: </b>
-          <%= f.radio_button :amount, 1 %>
-          <%= f.label :amount, '$1', value: 1 %>
-
-          <%= f.radio_button :amount, 2 %>
-          <%= f.label :amount, '$2', value: 2 %>
-
-          <%= f.radio_button :amount, 5, checked: true %>
-          <%= f.label :amount, '$5', value: 5 %>
-
-          <%= f.radio_button :amount, 10 %>
-          <%= f.label :amount, '$10', value: 10 %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.text_field :name, placeholder: 'Name', class: 'form-control'  %>
-      </div>
-
-      <div class="form-group">
-        <%= f.text_field :email, placeholder: 'Email', class: 'form-control'  %>
-      </div>
-      <%= f.fields_for :shipping_address do |s| %>
-        <div class="form-group">
-          <%= s.text_field :address_line_1, placeholder: 'Address Line 1', class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= s.text_field :address_line_2, placeholder: 'Address Line 2', class: 'form-control' %>
-        </div>
-        <div class="form-group form-inline">
-          <%= s.text_field :city, placeholder: 'City', class: 'form-control' %>
-          <%= s.select :state, options_for_select(ShippingAddressesHelper.us_states), { prompt: 'State' }, class: 'form-control' %>
-          <%= s.text_field :zip_code, placeholder: 'Zip Code', maxlength: 5, class: 'form-control' %>
-        </div>
-      <% end %>
-      <%= f.submit 'Submit', class: 'btn btn-primary center-box', data: { disable_with: 'Submitting...' } %>
-    <% end %>
+    <%= render partial: 'checkout_form' %>
   </div>
 </div>
