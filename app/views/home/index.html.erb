@@ -80,7 +80,7 @@
         <div class="form-group form-inline">
           <%= s.text_field :city, placeholder: 'City', class: 'form-control' %>
           <%= s.select :state, options_for_select(ShippingAddressesHelper.us_states), { prompt: 'State' }, class: 'form-control' %>
-          <%= s.text_field :zip_code, placeholder: 'Zip Code', class: 'form-control' %>
+          <%= s.text_field :zip_code, placeholder: 'Zip Code', maxlength: 5, class: 'form-control' %>
         </div>
       <% end %>
       <%= f.submit 'Submit', class: 'btn btn-primary center-box', data: { disable_with: 'Submitting...' } %>

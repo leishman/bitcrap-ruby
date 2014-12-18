@@ -1,12 +1,24 @@
 require 'rails_helper'
 
 describe ShippingAddress do
-  attrs = [:address_line_1, :city, :state, :zip_code]
-  attrs.each do |a|
-    it { should validate_presence_of a }
+
+  context "Any attributes " do
+    attrs = [:address_line_1, :city, :state, :zip_code]
+    attrs.each do |a|
+      it { should validate_presence_of a }
+    end
+
+    attrs = [:address_line_1, :address_line_2, :city]
+    attrs.each do |a|
+      it { should ensure_length_of(a).is_at_most(60) }
+    end
   end
 
+
   context "Zip Code" do
+
+    it { should validate_numericality_of(:zip_code).is_greater_than(0).only_integer }
+
     it "should return the proper messages for invalid zip codes" do
       sa_1 = FactoryGirl.build(:shipping_address, zip_code: 'asdfs'); sa_1.save
       expect(sa_1.valid?).to eq false

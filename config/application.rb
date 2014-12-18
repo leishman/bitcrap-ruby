@@ -20,5 +20,8 @@ module BitcrapRuby
     config.i18n.default_locale = :en
 
     config.action_mailer.preview_path = "#{Rails.root}/spec/mailers/previews"
+
+    # load additional paths
+    config.autoload_paths += %W(#{config.root}/app/values)
   end
 end
