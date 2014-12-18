@@ -17,6 +17,6 @@ class CallbackController < ApplicationController
 
   def send_order_confirmation
     return unless @order
-    BitcrapMailer.delay.order_confirmation(@order)
+    BitcrapMailer.delay.order_confirmation(@order.id)
   end
 end

@@ -6,6 +6,6 @@ FactoryGirl.define do
     address_line_3 'Extra line'
     city  { Faker::Address.city }
     state { Faker::Address.state_abbr }
-    zip_code { Faker::Address.zip_code }
+    zip_code { Faker::Address.zip_code[0..4] }
   end
 end
