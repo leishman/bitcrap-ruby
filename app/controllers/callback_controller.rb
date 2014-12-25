@@ -16,7 +16,8 @@ class CallbackController < ApplicationController
   private
 
   def send_order_confirmation
-    return unless @order
+    return unless @order && @order.paid?
+    return if @order.confirmation_sent
     BitcrapMailer.delay.order_confirmation(@order.id)
   end
 end

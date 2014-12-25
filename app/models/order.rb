@@ -14,6 +14,10 @@ class Order < ActiveRecord::Base
     has_shipped ? 'Shipped' : 'Not Shipped'
   end
 
+  def paid?
+    self.status == 'paid'
+  end
+
   private
 
   def set_secret_id

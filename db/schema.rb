@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141214211557) do
+ActiveRecord::Schema.define(version: 20141225040615) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -48,17 +48,18 @@ ActiveRecord::Schema.define(version: 20141214211557) do
 
   create_table "orders", force: true do |t|
     t.integer  "amount"
-    t.string   "currency",       default: "usd"
+    t.string   "currency",          default: "usd"
     t.string   "name"
     t.string   "email"
     t.string   "notes"
     t.string   "secret_id"
     t.string   "ref_id"
-    t.string   "status",         default: "unpaid"
-    t.boolean  "has_shipped",    default: false
+    t.string   "status",            default: "unpaid"
+    t.boolean  "has_shipped",       default: false
     t.text     "shipping_notes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "confirmation_sent", default: false
   end
 
   add_index "orders", ["email"], name: "index_orders_on_email", using: :btree

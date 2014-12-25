@@ -6,6 +6,8 @@ class BitcrapMailer < ActionMailer::Base
     @order = Order.find(order_id) # ruby hash object
     @address = @order.shipping_address#ruby address object
     mail(to: @order.email, bcc: 'leishman3@gmail.com', subject: "Bitcrap Order for #{@order.name}")
+    @order.reload.confirmation_sent = true
+    @order.save
   end
 
   def admin_warning(msg)
