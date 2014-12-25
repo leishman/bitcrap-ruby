@@ -30,8 +30,8 @@ describe Order do
   it "should not allow more orders to be created than the daily maximum" do
 
     # create two orders
-    order_1 = FactoryGirl.create(:order)
-    order_2 = FactoryGirl.create(:order)
+    order_1 = FactoryGirl.create(:order, status: 'paid')
+    order_2 = FactoryGirl.create(:order, status: 'paid')
     expect(Order.count).to eq 2
 
     # stub out daily limit to equal 1
@@ -46,12 +46,12 @@ describe Order do
     # expect updating of second order to still be allowed
     expect do
       order_2.update_attributes(status: 'underpaid')
-    end.to change{ order_2.status }.from('unpaid').to('underpaid')
+    end.to change{ order_2.status }.from('paid').to('underpaid')
   end
 
   it "should give the proper daily order amount remaining" do
     n = 5
-    n.times { FactoryGirl.create(:order) }
+    n.times { FactoryGirl.create(:order, status: 'paid') }
     expect(Order.amount_remaining).to eq(Order::DAILY_LIMIT - n)
   end
 end

@@ -11,6 +11,7 @@ class Order < ActiveRecord::Base
   validates :amount, numericality: { only_integer: true, greater_than: 0 }, inclusion: { in: VALID_AMOUNTS }
   validate :email_must_be_valid
   validate :daily_order_count_cannot_exceed_max, on: :create
+  scope :paid, -> { where(status: 'paid') }
   scope :today, -> { where('created_at >= ?', Time.zone.now.beginning_of_day) }
 
   def shipping_status
@@ -23,7 +24,7 @@ class Order < ActiveRecord::Base
 
   class << self
     def amount_remaining
-      DAILY_LIMIT - Order.today.count
+      DAILY_LIMIT - Order.paid.today.count
     end
   end
 
