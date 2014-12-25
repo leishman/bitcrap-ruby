@@ -2,8 +2,10 @@
 
 // colors
 $dark_green: green;
-$light_green: lightgreen;
+$light_green: #87c861;
 $dark_green: #528C4B;
+$red: red;
+$light_gray: lightgray;
 
 // dimensions
 $tablet_breakpoint: 640px;
@@ -81,7 +83,7 @@ body {
 }
 
 .masthead, .footer {
-  border-bottom: solid 1px lightgray;
+  border-bottom: solid 1px $light_gray;
   background-color: $dark_green;
   padding: 15px 20px;
   color: white;
@@ -235,7 +237,7 @@ body {
   background-color: $light_green;
   border: none;
   -webkit-appearance: none;
-  border: 1px solid lightgray;
+  border: 1px solid $light_gray;
   border-radius: 5px;
   margin-top: 10px;
   text-align: center;
@@ -249,6 +251,16 @@ body {
 
 .btn-primary {
   font-weight: bold;
+}
+
+.btn-disabled {
+  background-color: $light_gray;
+  color: $red;
+
+  &:hover {
+    background-color: $light_gray;
+    color: $red;
+  }
 }
 
 // lists
@@ -283,7 +295,6 @@ a {
   text-decoration: none;
 }
 
-
 // errors
 
 .errors {
@@ -296,13 +307,17 @@ a {
   }
 }
 
+.warning {
+  color: red;
+}
+
 .start-over {
   padding-top: 10px;
   text-align: center;
 }
 
 .disclaimer {
-  color: lightgray;
+  color: $light_gray;
 }
 
 // order show page
@@ -313,7 +328,7 @@ a {
 
 .order-status-title {
   .unpaid, .underpaid, .overpaid {
-    color: red;
+    color: $red;
   }
 
   .paid {

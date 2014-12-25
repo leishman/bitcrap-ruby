@@ -9,6 +9,7 @@
     <%= render partial: 'testimonials' %>
   </div>
   <div id="checkout" class="container checkout-box">
+    <h3>Gifts Remaining: <span class="underline"><%= @amount_remaining %></span></h3><br/>
     <%= render partial: 'checkout_form' %>
   </div>
 </div>

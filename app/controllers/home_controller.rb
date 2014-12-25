@@ -2,6 +2,7 @@ class HomeController < ApplicationController
 
   def index
     @order = Order.new
+    @amount_remaining = display_amount
     @order.build_shipping_address
     @tagline = get_tagline
   end
@@ -16,6 +17,15 @@ class HomeController < ApplicationController
   end
 
   private
+
+  def display_amount
+    amount_remaining = Order.amount_remaining
+    if amount_remaining > 0
+      amount_remaining
+    else
+      "<span class='warning'>SOLD OUT</span>".html_safe
+    end
+  end
 
   def get_tagline
     [
