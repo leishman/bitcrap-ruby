@@ -9,6 +9,12 @@ class HomeController < ApplicationController
   def wtf
   end
 
+  def privacy
+  end
+
+  def tos
+  end
+
   private
 
   def get_tagline

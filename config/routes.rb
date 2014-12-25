@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root 'home#index'
   get '/wtf', to: 'home#wtf'
+  get '/privacy', to: 'home#privacy'
+  get '/tos', to: 'home#tos'
+
   post '/aslfkjw232', to: 'callback#callback', as: 'callback'
   get '/return/:ref_id', to: 'orders#return'
   get '/cancel', to: 'orders#cancel'

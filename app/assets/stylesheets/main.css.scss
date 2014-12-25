@@ -107,7 +107,8 @@ body {
 
 .outer-container {
   width: $main_width;
-  min-height: 500px;
+  min-height: 650px;
+  min-height: 86vh;
   margin: 0 auto;
   padding-top: $masthead_height;
 }
@@ -166,6 +167,10 @@ body {
     }
 
   }
+}
+
+.boring-text {
+  width: 500px;
 }
 
 // forms
@@ -477,7 +482,7 @@ a {
     text-align: center;
   }
 
-  .masthead-inner, .footer-inner {
+  .masthead-inner, .footer-inner, .boring-text {
     width: 100%;
   }
 
